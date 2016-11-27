@@ -1,0 +1,39 @@
+<form method="post">
+<div class="row">
+	<label for="txt_Keyword">Keyword:</label>
+	<input id="txt_Keyword" name="txt_Keyword" type="text">
+</div>
+<div class="row">
+	<label for="sel_Table">Table:</label>
+	<select id="sel_Table" name="sel_Table">
+		<option value="Customer">Customer</option>
+		<option value="Employee">Employee</option>
+		<option value="Ticket">Ticket</option>
+		<option value="Lead">Lead</option>
+	</select>
+</div>
+<div class="row">
+	<label for="txt_ColumnName">Column Name:</label>
+	<input id="txt_ColumnName" name="txt_ColumnName" type="text">
+</div>
+<div class="row">
+<input type="submit" value="Search">
+</div>
+</form>
+{% if results %}
+<table border="1">
+  <tr>
+    {% for header in headers %}
+    <th scope="col">{{ header }}</th>
+    {% endfor %}
+  </tr>
+  <tr>
+  {% for row in results %}
+    {% for col in headers %}
+      <td>{{ row[col] }}</td>
+    {% endfor %}
+  <td><a href="/edit/{{ table }}">edit</a></td>
+  {% endfor %}
+  </tr>
+</table>
+{% endif %}
