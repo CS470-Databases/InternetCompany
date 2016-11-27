@@ -5,7 +5,7 @@ CREATE TABLE ISP_MANAGEMENT.PAYMENT
 	PaymentID		INT				NOT NULL,
 	TotalReceived	DECIMAL(5,2)	NOT NULL,
 	PaymentDate		DATE			NOT NULL,
-	PaymentTime		TIME,
+	PaymentTime		TIME			NOT NULL,
 	ReferenceNumber	CHAR(9),
 	Pay_Overdue		DECIMAL(5,2),
 	PRIMARY KEY (PaymentID),
@@ -14,10 +14,10 @@ CREATE TABLE ISP_MANAGEMENT.PAYMENT
 CREATE TABLE ISP_MANAGEMENT.INVOICE
 (
 	InvoiceID		INT				NOT NULL,
-	LineItem		INT,
-	SalesTax		DECIMAL(0,2),
+	LineItem		CHAR(25),
+	SalesTax		DECIMAL(5,2),
 	InvoiceDate		DATE			NOT NULL,
-	InvoiceTime		TIME,
+	InvoiceTime		TIME			NOT NULL,
 	Total			DECIMAL(5,2)	NOT NULL,
 	SubTotal		DECIMAL(5,2)	NOT NULL,
 	Quantity		INT				NOT NULL,
@@ -48,11 +48,12 @@ CREATE TABLE ISP_MANAGEMENT.CUSTOMER
 	Cust_LastName	VARCHAR(20)		NOT NULL,
 	BillingAddress	VARCHAR(50)		NOT NULL,
 	Cust_Email		VARCHAR(35),
-	ReferralSource	VARCHAR(140),
+	ReferralSource	VARCHAR(20),
 	Username		VARCHAR(30)		NOT NULL,
 	Password		VARCHAR(30)		NOT NULL,
 	Cust_StartDate	DATE			NOT NULL,
-	PRIMARY KEY (CustomerID)
+	PRIMARY KEY (CustomerID),
+	UNIQUE(Username)
 );
 
 ALTER TABLE ISP_MANAGEMENT.INVOICE 
@@ -134,11 +135,11 @@ CREATE TABLE ISP_MANAGEMENT.SERVICE_CALL
 		ON DELETE SET NULL,
 	FOREIGN KEY (EmployeeID) REFERENCES EMPLOYEE(EmployeeID),
 	Summary					VARCHAR(140)	NOT NULL,
-	Scheduled_Date			DATE			NOT NULL
-	Scheduled_Time			TIME			NOT NULL,
+	Scheduled_Date			DATE,
+	Scheduled_Time			TIME,
 	Install_Date			DATE,
 	Install_Time			TIME,
-	Completion_Date			DATE			NOT NULL,
+	Completion_Date			DATE,
 	Completion_Time			TIME,
 	PRIMARY KEY (ServiceCallID)
 );
@@ -185,7 +186,6 @@ CREATE TABLE ISP_MANAGEMENT.SERVICE
 	Serv_Name				VARCHAR(25)		NOT NULL,
 	MonthlyPrice			DECIMAL(3,2)	NOT NULL,
 	Type_Category			VARCHAR(20),
-	Serv_Address			VARCHAR(50)		NOT NULL,
 	PRIMARY KEY (ServiceID)
 );
 
@@ -196,11 +196,11 @@ CREATE TABLE ISP_MANAGEMENT.EQUIPMENT
 	Manufacturer			VARCHAR(25)		NOT NULL,
 	Model					VARCHAR(20)		NOT NULL,
 	MAC_Address				CHAR(12)		NOT NULL,
-	IP_Address				CHAR(39)		NOT NULL,
+	IP_Address				CHAR(15)		NOT NULL,
 	Netmask					VARCHAR(15)		NOT NULL,
-	Gateway					VARCHAR(11),
-	DNSPrimary				VARCHAR(13)		NOT NULL,
-	DNSSecondary			VARCHAR(13),
+	Gateway					VARCHAR(15),
+	DNSPrimary				VARCHAR(15)		NOT NULL,
+	DNSSecondary			VARCHAR(15),
 	FOREIGN KEY (ServiceID) REFERENCES SERVICE(ServiceID)
 		ON DELETE SET NULL,
 	PRIMARY KEY (EquipmentID)
