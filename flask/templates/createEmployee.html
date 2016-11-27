@@ -1,4 +1,4 @@
-<form method="post">
+<form method="post" action="/create/new/employee">
 <div class="row">
 	<label for="txt_EmployeeID">EmployeeID:</label>
 	<input id="txt_EmployeeID" name="txt_EmployeeID" type="text">
@@ -17,7 +17,7 @@
 </div>
 <div class="row">
 	<label for="txt_DOB">DOB:</label>
-	<input id="txt_DOB" name="txt_DOB" type="text">
+	<input id="txt_DOB" name="txt_DOB" type="text" value="YYYY-MM-DD">
 </div>
 <div class="row">
 	<label for="txt_Email">Email:</label>
@@ -41,11 +41,19 @@
 </div>
 <div class="row">
 	<label for="txt_StartDate">StartDate:</label>
-	<input id="txt_StartDate" name="txt_StartDate" type="text">
+	<input id="txt_StartDate" name="txt_StartDate" type="text" value="YYYY-MM-DD">
 </div>
 <div class="row">
 	<label for="txt_EndDate">EndDate:</label>
-	<input id="txt_EndDate" name="txt_EndDate" type="text">
+	<input id="txt_EndDate" name="txt_EndDate" type="text" value="YYYY-MM-DD">
+</div>
+<div class="row">
+	<label for="txt_ManagerID">ManagerID:</label>
+	<input id="txt_ManagerID" name="txt_ManagerID" type="text">
+</div>
+<div class="row">
+	<label for="txt_DepartmentID">DepartmentID:</label>
+	<input id="txt_DepartmentID" name="txt_DepartmentID" type="text">
 </div>
 <div class="row">
 <input type="submit" value="Create">

@@ -1,4 +1,8 @@
-<form method="post">
+<form method="post" action="/create/new/customer">
+<div class="row">
+	<label for="txt_CustomerID">CustomerID:</label>
+	<input id="txt_CustomerID" name="txt_CustomerID" type="text">
+</div>
 <div class="row">
 	<label for="txt_FirstName">FirstName:</label>
 	<input id="txt_FirstName" name="txt_FirstName" type="text">
@@ -18,6 +22,18 @@
 <div class="row">
 	<label for="txt_ReferralSource">ReferralSource:</label>
 	<input id="txt_ReferralSource" name="txt_ReferralSource" type="text">
+</div>
+<div class="row">
+	<label for="txt_Username">Username:</label>
+	<input id="txt_Username" name="txt_Username" type="text">
+</div>
+<div class="row">
+	<label for="txt_Password">Password:</label>
+	<input id="txt_Password" name="txt_Password" type="text">
+</div>
+<div class="row">
+	<label for="txt_StartDate">StartDate:</label>
+	<input id="txt_StartDate" name="txt_StartDate" type="text" value="YYYY-MM-DD">
 </div>
 <div class="row">
 <input type="submit" value="Create">
