@@ -1,39 +1,48 @@
-<form method="post">
+<form method="post" action="/edit/post/{{ table }}">
 <div class="row">
 	<label for="txt_CustomerID">CustomerID:</label>
-	<input id="txt_CustomerID" name="txt_CustomerID" type="text">
+	<input id="txt_CustomerID" name="txt_CustomerID" type="text"
+	 value="{{ entry.CustomerID }}">
 </div>
 <div class="row">
 	<label for="txt_FirstName">FirstName:</label>
-	<input id="txt_FirstName" name="txt_FirstName" type="text">
+	<input id="txt_FirstName" name="txt_FirstName" type="text"
+	 value="{{ entry.FirstName }}">
 </div>
 <div class="row">
 	<label for="txt_LastName">LastName:</label>
-	<input id="txt_LastName" name="txt_LastName" type="text">
+	<input id="txt_LastName" name="txt_LastName" type="text"
+	 value="{{ entry.LastName }}">
 </div>
 <div class="row">
 	<label for="txt_BillingAddress">BillingAddress:</label>
-	<input id="txt_BillingAddress" name="txt_BillingAddress" type="text">
+	<input id="txt_BillingAddress" name="txt_BillingAddress" type="text"
+	 value="{{ entry.BillingAddress }}">
 </div>
 <div class="row">
 	<label for="txt_Email">Email:</label>
-	<input id="txt_Email" name="txt_Email" type="text">
+	<input id="txt_Email" name="txt_Email" type="text"
+	 value="{{ entry.Email }}">
 </div>
 <div class="row">
 	<label for="txt_ReferralSource">ReferralSource:</label>
-	<input id="txt_ReferralSource" name="txt_ReferralSource" type="text">
+	<input id="txt_ReferralSource" name="txt_ReferralSource" type="text"
+	 value="{{ entry.Referral }}">
 </div>
 <div class="row">
 	<label for="txt_Username">Username:</label>
-	<input id="txt_Username" name="txt_Username" type="text">
+	<input id="txt_Username" name="txt_Username" type="text"
+	 value="{{ entry.Username }}">
 </div>
 <div class="row">
 	<label for="txt_Password">Password:</label>
-	<input id="txt_Password" name="txt_Password" type="text">
+	<input id="txt_Password" name="txt_Password" type="text"
+	 value="{{ entry.Password }}">
 </div>
 <div class="row">
 	<label for="txt_StartDate">StartDate:</label>
-	<input id="txt_StartDate" name="txt_StartDate" type="text">
+	<input id="txt_StartDate" name="txt_StartDate" type="text"
+	 value="{{ entry.StartDate }}">
 </div>
 <div class="row">
 <input type="submit" value="Save">

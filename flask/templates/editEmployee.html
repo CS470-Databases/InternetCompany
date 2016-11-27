@@ -1,51 +1,63 @@
-<form method="post">
+<form method="post" action="/edit/post/{{ table }}">
 <div class="row">
 	<label for="txt_EmployeeID">EmployeeID:</label>
-	<input id="txt_EmployeeID" name="txt_EmployeeID" type="text">
+	<input id="txt_EmployeeID" name="txt_EmployeeID" type="text"
+	 value="{{ entry.EmployeeID }}">
 </div>
 <div class="row">
 	<label for="txt_FirstName">FirstName:</label>
-	<input id="txt_FirstName" name="txt_FirstName" type="text">
+	<input id="txt_FirstName" name="txt_FirstName" type="text"
+	 value="{{ entry.FirstName }}">
 </div>
 <div class="row">
 	<label for="txt_LastName">LastName:</label>
-	<input id="txt_LastName" name="txt_LastName" type="text">
+	<input id="txt_LastName" name="txt_LastName" type="text"
+	 value="{{ entry.LastName }}">
 </div>
 <div class="row">
 	<label for="txt_SSN">SSN:</label>
-	<input id="txt_SSN" name="txt_SSN" type="text">
+	<input id="txt_SSN" name="txt_SSN" type="text"
+	 value="{{ entry.SSN }}">
 </div>
 <div class="row">
 	<label for="txt_DOB">DOB:</label>
-	<input id="txt_DOB" name="txt_DOB" type="text">
+	<input id="txt_DOB" name="txt_DOB" type="text"
+	 value="{{ entry.DOB }}">
 </div>
 <div class="row">
 	<label for="txt_Email">Email:</label>
-	<input id="txt_Email" name="txt_Email" type="text">
+	<input id="txt_Email" name="txt_Email" type="text"
+	 value="{{ entry.Email }}">
 </div>
 <div class="row">
 	<label for="txt_Address">Address:</label>
-	<input id="txt_Address" name="txt_Address" type="text">
+	<input id="txt_Address" name="txt_Address" type="text"
+	 value="{{ entry.Address }}">
 </div>
 <div class="row">
 	<label for="txt_Phone">Phone:</label>
-	<input id="txt_Phone" name="txt_Phone" type="text">
+	<input id="txt_Phone" name="txt_Phone" type="text"
+	 value="{{ entry.Phone }}">
 </div>
 <div class="row">
 	<label for="txt_Role">Role:</label>
-	<input id="txt_Role" name="txt_Role" type="text">
+	<input id="txt_Role" name="txt_Role" type="text"
+	 value="{{ entry.Role }}">
 </div>
 <div class="row">
 	<label for="txt_Salary">Salary:</label>
-	<input id="txt_Salary" name="txt_Salary" type="text">
+	<input id="txt_Salary" name="txt_Salary" type="text"
+	 value="{{ entry.Salary }}">
 </div>
 <div class="row">
 	<label for="txt_StartDate">StartDate:</label>
-	<input id="txt_StartDate" name="txt_StartDate" type="text">
+	<input id="txt_StartDate" name="txt_StartDate" type="text"
+	 value="{{ entry.StartDate }}">
 </div>
 <div class="row">
 	<label for="txt_EndDate">EndDate:</label>
-	<input id="txt_EndDate" name="txt_EndDate" type="text">
+	<input id="txt_EndDate" name="txt_EndDate" type="text"
+	 value="{{ entry.EndDate }}">
 </div>
 <div class="row">
 <input type="submit" value="Save">

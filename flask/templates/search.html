@@ -32,7 +32,7 @@
     {% for col in headers %}
       <td>{{ row[col] }}</td>
     {% endfor %}
-  <td><a href="/edit/{{ table }}">edit</a></td>
+  <td><a href="{{ editPage(table,row) }}">edit</a></td>
   {% endfor %}
   </tr>
 </table>

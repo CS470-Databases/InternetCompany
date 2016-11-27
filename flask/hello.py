@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template
-from flask import request, jsonify, redirect
+from flask import request, jsonify, redirect, session, url_for
 app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def hello_world():
@@ -28,13 +28,28 @@ def hello_world():
 
 @app.route('/edit/<table>')
 def edit(table):
-    return render_template('edit'+table+'.html')
+    row = session['editRow']
+    row['CustomerID'] = '154165'
+    #loads the template with row values
+    return render_template('edit'+table+'.html', entry=row, table=table)
+
+@app.route('/edit/post/<table>', methods=['POST'])
+def editDatabase(table):
+    #TODO: make a database query to edit the form based on request.form data
+    print(table)
+    print(request.form)
+    return redirect('/')
 
 def editPage(table, row):
+    #saves the current row to session
+    session['editRow'] = row
     return 'edit/'+table
 
+
 app.jinja_env.globals.update(editPage=editPage)
+app.jinja_env.globals.update(editDatabase=editDatabase)
 
-
+#secret_key is required for session
+app.secret_key = "b'\xccx\r\xcc\xb9\n\x01n\x13 -\x0f\x00\xd0\xc3Q\xbd\x16\xb4\xe3\x90\xd8_G'"
 if __name__ == "__main__":
     app.run()

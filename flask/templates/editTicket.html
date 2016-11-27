@@ -1,0 +1,35 @@
+<form method="post" action="/edit/post/{{ table }}">
+<div class="row">
+	<label for="txt_TicketID">TicketID:</label>
+	<input id="txt_TicketID" name="txt_TicketID" type="text"
+	 value="{{ entry.TicketID }}">
+</div>
+<div class="row">
+	<label for="txt_Category">Category:</label>
+	<input id="txt_Category" name="txt_Category" type="text"
+	 value="{{ entry.Category }}">
+</div>
+<div class="row">
+	<label for="txt_TicketDate">TicketDate:</label>
+	<input id="txt_TicketDate" name="txt_TicketDate" type="text"
+	 value="{{ entry.TicketDate }}">
+</div>
+<div class="row">
+	<label for="txt_TicketTime">TicketTime:</label>
+	<input id="txt_TicketTime" name="txt_TicketTime" type="text"
+	 value="{{ entry.TicketTime }}">
+</div>
+<div class="row">
+	<input id="chk_Solved" name="chk_Solved" type="checkbox">
+	<span><label for="chk_Solved">Solved</label></span>
+</div>
+<div class="row">
+	<label for="txt_Problem">Problem:</label>
+	<input id="txt_Problem" name="txt_Problem" type="text"
+	 value="{{ entry.Problem }}">
+</div>
+<div class="row">
+<input type="submit" value="Save">
+</div>
+</form>
+
